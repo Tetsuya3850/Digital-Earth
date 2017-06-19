@@ -5,7 +5,6 @@ import { init } from "./initEarth";
 class Earth extends Component {
   componentDidMount() {
     init();
-    window.addEventListener("resize", this.handleResize, false);
   }
 
   render() {
