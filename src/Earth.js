@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { init } from "./initEarth";
+import "./App.css";
 
 class Earth extends Component {
   componentDidMount() {
@@ -7,7 +8,7 @@ class Earth extends Component {
   }
 
   render() {
-    return <div />;
+    return <div id="earthCanvas" />;
   }
 }
 
