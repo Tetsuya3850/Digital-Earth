@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { init } from "./initEarth";
+import { initVaporEarth } from "./initVaporEarth";
 import "./App.css";
 
 class Earth extends Component {
   componentDidMount() {
-    init();
+    initVaporEarth();
   }
 
   render() {
