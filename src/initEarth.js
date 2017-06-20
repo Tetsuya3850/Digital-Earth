@@ -9,7 +9,7 @@ var scene;
 var camera;
 var control;
 // var cameraControl;
-var point = lonLatToVector3(30, 135);
+var point = lonLatToVector3(-30, -140);
 
 /**
      * Initializes the scene, camera and objects. Called when the window is

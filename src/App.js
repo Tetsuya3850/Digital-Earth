@@ -8,7 +8,8 @@ class App extends Component {
       <div>
         <Earth />
         <div id="info">
-          海は地球表面の約7割を占める。
+          <h2>海は地球表面の約7割を占める</h2>
+          <h4>あ</h4>
         </div>
       </div>
     );
