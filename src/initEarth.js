@@ -29,7 +29,7 @@ export function init() {
   // create a render, sets the background color and the size
   renderer = new THREE.WebGLRenderer();
   renderer.setClearColor(0x000000, 1.0);
-  renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
+  renderer.setSize(window.innerWidth / 1.5, window.innerHeight / 1.5);
   renderer.shadowMap.Enabled = true;
 
   // create a sphere
