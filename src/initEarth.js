@@ -9,7 +9,7 @@ var scene;
 var camera;
 var control;
 // var cameraControl;
-var point = lonLatToVector3(45, 135);
+var point = lonLatToVector3(30, 135);
 
 /**
      * Initializes the scene, camera and objects. Called when the window is
@@ -38,27 +38,26 @@ export function init() {
   var sphereMaterial = createEarthMaterial();
   var earthMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
   earthMesh.name = "earth";
-  earthMesh.position.set(-10, 0, 0);
   scene.add(earthMesh);
-  console.log(point);
+  earthMesh.position.set(-10, 0, 0);
   earthMesh.rotation.set(point.x, point.y, 0);
 
   var overlayGeometry = new THREE.SphereGeometry(15, 60, 60);
   var overlayMaterial = createOverlayMaterial();
   var overlayMesh = new THREE.Mesh(overlayGeometry, overlayMaterial);
   overlayMesh.name = "overlay";
-  overlayMesh.position.set(-10, 0, 0);
-  // overlayMesh.rotation.set(lonLatToVector3(145, 30));
   scene.add(overlayMesh);
+  overlayMesh.position.set(-10, 0, 0);
+  overlayMesh.rotation.set(point.x, point.y, 0);
 
   // create a cloudGeometry, slighly bigger than the original sphere
   var cloudGeometry = new THREE.SphereGeometry(15.2, 60, 60);
   var cloudMaterial = createCloudMaterial();
   var cloudMesh = new THREE.Mesh(cloudGeometry, cloudMaterial);
   cloudMesh.name = "clouds";
-  cloudMesh.position.set(-10, 0, 0);
-  // cloudMesh.rotation.set(lonLatToVector3(145, 30));
   scene.add(cloudMesh);
+  cloudMesh.position.set(-10, 0, 0);
+  cloudMesh.rotation.set(point.x, point.y, 0);
 
   // position and point the camera to the center of the scene
   // camera.position.x = 25;
@@ -175,7 +174,7 @@ function extractLocation(response) {
 function lonLatToVector3(lng, lat, out) {
   out = out || new THREE.Vector3();
 
-  var adjust = 270 - lat;
+  var adjust = 280 - lat;
 
   //distribute to sphere
   out.set(lng / 90 * Math.PI / 2, adjust / 90 * Math.PI / 2, 0);
