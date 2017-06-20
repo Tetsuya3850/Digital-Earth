@@ -8,7 +8,7 @@ class Earth extends Component {
   }
 
   render() {
-    return <div />;
+    return <div className="Earth" />;
   }
 }
 
