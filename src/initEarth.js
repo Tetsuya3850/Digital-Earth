@@ -8,7 +8,7 @@ var renderer;
 var scene;
 var camera;
 var control;
-var cameraControl;
+// var cameraControl;
 
 /**
      * Initializes the scene, camera and objects. Called when the window is
@@ -29,7 +29,7 @@ export function init() {
   // create a render, sets the background color and the size
   renderer = new THREE.WebGLRenderer();
   renderer.setClearColor(0x000000, 1.0);
-  renderer.setSize(window.innerWidth / 1.5, window.innerHeight / 1.5);
+  renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.shadowMap.Enabled = true;
 
   // create a sphere
@@ -37,12 +37,14 @@ export function init() {
   var sphereMaterial = createEarthMaterial();
   var earthMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
   earthMesh.name = "earth";
+  earthMesh.position.set(-10, 0, 0);
   scene.add(earthMesh);
 
   var overlayGeometry = new THREE.SphereGeometry(15, 60, 60);
   var overlayMaterial = createOverlayMaterial();
   var overlayMesh = new THREE.Mesh(overlayGeometry, overlayMaterial);
   overlayMesh.name = "overlay";
+  overlayMesh.position.set(-10, 0, 0);
   scene.add(overlayMesh);
 
   // create a cloudGeometry, slighly bigger than the original sphere
@@ -50,16 +52,17 @@ export function init() {
   var cloudMaterial = createCloudMaterial();
   var cloudMesh = new THREE.Mesh(cloudGeometry, cloudMaterial);
   cloudMesh.name = "clouds";
+  cloudMesh.position.set(-10, 0, 0);
   scene.add(cloudMesh);
 
   // position and point the camera to the center of the scene
-  camera.position.x = 25;
-  camera.position.y = 26;
-  camera.position.z = 23;
+  // camera.position.x = 25;
+  // camera.position.y = 26;
+  camera.position.z = 40;
   camera.lookAt(scene.position);
 
   // add controls
-  cameraControl = new THREE.OrbitControls(camera);
+  // cameraControl = new THREE.OrbitControls(camera);
 
   control = new function() {
     this.rotationSpeed = 0.001;
@@ -172,11 +175,11 @@ function render() {
   scene.getObjectByName("overlay").material.map.needsUpdate = true;
 
   // update the camera
-  cameraControl.update();
+  // cameraControl.update();
 
-  scene.getObjectByName("earth").rotation.y += control.rotationSpeed;
-  scene.getObjectByName("overlay").rotation.y += control.rotationSpeed;
-  scene.getObjectByName("clouds").rotation.y += control.rotationSpeed * 1.1;
+  // scene.getObjectByName("earth").rotation.y += control.rotationSpeed;
+  // scene.getObjectByName("overlay").rotation.y += control.rotationSpeed;
+  // scene.getObjectByName("clouds").rotation.y += control.rotationSpeed * 1.1;
 
   // and render the scene
   renderer.render(scene, camera);
