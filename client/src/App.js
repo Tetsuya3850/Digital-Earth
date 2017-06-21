@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import SceneOne from "./SceneOne";
-import SceneTwo from "./SceneTwo";
+import Scene from "./Scene";
+import client from "./client";
 
 class App extends Component {
   constructor(props) {
@@ -23,12 +23,27 @@ class App extends Component {
   };
 
   render() {
+    const SceneRoutes = this.state.scenario.map(scene =>
+      <Route
+        path={"/" + scene.id}
+        key={scene.id}
+        component={(props, state, params) =>
+          <Scene
+            key={scene.id}
+            lon={scene.lon}
+            lat={scene.lat}
+            global={scene.global}
+            title={scene.title}
+            text={scene.text}
+          />}
+      />
+    );
+
     return (
       <Router>
         <div>
           <Switch>
-            <Route exact path="/" component={SceneOne} />
-            <Route path="/2" component={SceneTwo} />
+            {SceneRoutes}
           </Switch>
         </div>
       </Router>
