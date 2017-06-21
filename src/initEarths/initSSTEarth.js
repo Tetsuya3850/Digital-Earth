@@ -1,5 +1,5 @@
 import THREELib from "three-js";
-import vapor from "./earthvapor.mp4";
+import sst from "../Visuals/sst2017.mp4";
 
 const THREE = THREELib(["OrbitControls"]);
 
@@ -11,7 +11,7 @@ var cameraControl;
 var point = lonLatToVector3(30, 140);
 var video, videoImage, videoImageContext, videoTexture;
 
-export function initVaporEarth() {
+export function initSSTEarth() {
   scene = new THREE.Scene();
 
   camera = new THREE.PerspectiveCamera(
@@ -48,10 +48,9 @@ export function initVaporEarth() {
 
 function createEarthMaterial() {
   video = document.createElement("video");
-  video.src = vapor;
+  video.src = sst;
   video.load();
   video.play();
-  video.loop = true;
 
   videoImage = document.createElement("canvas");
   videoImage.width = 1024;
