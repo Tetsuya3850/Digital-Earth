@@ -1,7 +1,7 @@
 import THREELib from "three-js";
 import earth from "./images/earthmap4k.jpg";
 import cloud from "./images/fair_clouds_4k.png";
-import vapor from "./vapor.mp4";
+import vapor from "./earthvapor.mp4";
 
 const THREE = THREELib(["OrbitControls"]);
 
@@ -11,7 +11,7 @@ var scene;
 var camera;
 var control;
 var cameraControl;
-var point = lonLatToVector3(-30, -140);
+var point = lonLatToVector3(30, 140);
 var video, videoImage, videoImageContext, videoTexture;
 
 /**
@@ -71,6 +71,7 @@ function createEarthMaterial() {
   video.src = vapor;
   video.load(); // must call after setting/changing source
   video.play();
+  video.loop = true;
 
   videoImage = document.createElement("canvas");
   videoImage.width = 1024;
@@ -95,7 +96,7 @@ function createEarthMaterial() {
 function lonLatToVector3(lng, lat, out) {
   out = out || new THREE.Vector3();
 
-  var adjust = 280 - lat;
+  var adjust = 90 - lat;
 
   //distribute to sphere
   out.set(lng / 90 * Math.PI / 2, adjust / 90 * Math.PI / 2, 0);
