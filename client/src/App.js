@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Scene from "./Scene";
+import Add from "./Add";
 import client from "./client";
 const vapor = require("./Visuals/earthvapor.mp4");
 const sst = require("./Visuals/sst2016.mp4");
@@ -60,6 +61,10 @@ class App extends Component {
                 />}
             />
             {SceneRoutes}
+            <Route
+              path="/add"
+              render={() => <Add num={this.state.scenario.length} />}
+            />
           </Switch>
         </div>
       </Router>

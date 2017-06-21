@@ -26,4 +26,23 @@ app.get("/api/scenario", (req, res) => {
   });
 });
 
+app.post("/api/scenario", (req, res) => {
+  fs.readFile(DATA_FILE, (err, data) => {
+    const scenario = JSON.parse(data);
+    const newScene = {
+      id: req.body.id,
+      lon: req.body.lon,
+      lat: req.body.lat,
+      global: req.body.global,
+      title: req.body.title,
+      text: req.body.text
+    };
+    scenario.push(newScene);
+    fs.writeFile(DATA_FILE, JSON.stringify(scenario, null, 4), () => {
+      res.setHeader("Cache-Control", "no-cache");
+      res.json(scenario);
+    });
+  });
+});
+
 export default app;

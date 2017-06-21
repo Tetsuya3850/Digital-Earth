@@ -9,6 +9,17 @@ function getScenario(success) {
     .then(success);
 }
 
+function postScene(data) {
+  return fetch("/api/scenario", {
+    method: "post",
+    body: JSON.stringify(data),
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    }
+  }).then(checkStatus);
+}
+
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
     return response;
@@ -25,5 +36,5 @@ function parseJSON(response) {
   return response.json();
 }
 
-const client = { getScenario };
+const client = { getScenario, postScene };
 export default client;
