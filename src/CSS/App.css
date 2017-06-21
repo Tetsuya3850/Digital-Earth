@@ -6,6 +6,7 @@
   z-index: 100;
   display: block;
   color: white;
+  word-wrap: break-word;
 }
 
 canvas {
