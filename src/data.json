@@ -1,12 +1,18 @@
 [
   {
     "id": 1,
-    "title": "React Bootstrap",
-    "titleForUrl": "reactbootstrap",
-    "catch": "The most popular front-end framework, rebuilt for React",
-    "logoImg": "https://react-bootstrap.github.io/assets/logo.png",
-    "mainImg": "https://cdn.auth0.com/blog/react-bootstrap:buttons.png",
-    "text": "The popular front-end framework, rebuilt with React. React-Bootstrap is a library of reusable front-end components. You'll get the look-and-feel of Twitter Bootstrap, but with much cleaner code, via Facebook's React.js framework.",
-    "url": "https://react-bootstrap.github.io/"
+    "lon": "30",
+    "lat": "135",
+    "global": "vapor",
+    "title": "水惑星の奇跡",
+    "text": "地球は、宇宙の中でも珍しい、水に満ち溢れた星です。水分子(H2O)は宇宙にあまねく存在しますが、それが液体の状態で「海」を形成している星は、宇宙の中でも極めて稀です。"
+  },
+  {
+    "id": 2,
+    "lon": "30",
+    "lat": "135",
+    "global": "sst",
+    "title": "地球を巡る水、旅する水",
+    "text": "黒潮の流れが赤く蛇行する流れとして示されていますが、水温の高い暖流は、熱帯の海に溜まった太陽のエネルギーを運んでくる熱のベルトコンベアでもあるのです。"
   }
 ]

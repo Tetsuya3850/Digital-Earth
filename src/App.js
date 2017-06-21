@@ -4,6 +4,24 @@ import SceneOne from "./SceneOne";
 import SceneTwo from "./SceneTwo";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      scenario: []
+    };
+  }
+
+  componentDidMount() {
+    this.loadScenarioFromServer();
+  }
+
+  loadScenarioFromServer = () => {
+    client.getScenario(serverScenario =>
+      this.setState({ scenario: serverScenario })
+    );
+  };
+
   render() {
     return (
       <Router>
