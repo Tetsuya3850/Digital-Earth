@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import Earth from "./Earth";
 import Description from "./Description";
 import "./CSS/App.css";
-import vapor from "./Visuals/earthvapor.mp4";
-import sst from "./Visuals/sst2016.mp4";
 
 class Scene extends Component {
   render() {

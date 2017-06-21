@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Scene from "./Scene";
 import client from "./client";
+const vapor = require("./Visuals/earthvapor.mp4");
+const sst = require("./Visuals/sst2016.mp4");
 
 class App extends Component {
   constructor(props) {
@@ -32,7 +34,7 @@ class App extends Component {
             key={scene.id}
             lon={scene.lon}
             lat={scene.lat}
-            global={scene.global}
+            global={eval(scene.global)}
             title={scene.title}
             text={scene.text}
           />}
