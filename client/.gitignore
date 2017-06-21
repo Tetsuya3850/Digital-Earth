@@ -17,7 +17,7 @@
 .env.production.local
 
 # visuals
-/client/src/Visuals/earthvapor.mp4
+/src/Visuals/earthvapor.mp4
 
 npm-debug.log*
 yarn-debug.log*
