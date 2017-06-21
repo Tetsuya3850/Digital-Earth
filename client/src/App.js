@@ -32,6 +32,7 @@ class App extends Component {
         component={(props, state, params) =>
           <Scene
             key={scene.id}
+            id={scene.id}
             lon={scene.lon}
             lat={scene.lat}
             global={eval(scene.global)}

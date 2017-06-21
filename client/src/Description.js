@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 class Description extends Component {
   render() {
+    const nextId = this.props.id + 1;
     return (
       <div id="info">
         <h2 style={{ textAlign: "center" }}>{this.props.title}</h2>
@@ -11,7 +12,9 @@ class Description extends Component {
         <h4>
           {this.props.text}
         </h4>
-        <Link to="/2" style={{ textAlign: "right" }}>次へ</Link>
+        <Link to={"/" + nextId} style={{ textAlign: "right" }}>
+          次へ
+        </Link>
       </div>
     );
   }
