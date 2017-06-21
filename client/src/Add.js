@@ -76,10 +76,7 @@ class Add extends React.Component {
 
   render() {
     return (
-      <div
-        className="container"
-        style={{ maxWidth: 600, backgroundColor: "White" }}
-      >
+      <div className="container" style={{ maxWidth: 600, color: "White" }}>
 
         <section className="row" style={{ textAlign: "center" }}>
           <div className="col-md-12">

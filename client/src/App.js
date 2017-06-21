@@ -39,6 +39,7 @@ class App extends Component {
             global={eval(scene.global)}
             title={scene.title}
             text={scene.text}
+            length={this.state.scenario.length}
           />}
       />
     );
@@ -58,6 +59,7 @@ class App extends Component {
                   global={vapor}
                   title="地球ミュージアムにようこそ"
                   text="はじめるには次へをクリック"
+                  length={this.state.scenario.length}
                 />}
             />
             {SceneRoutes}

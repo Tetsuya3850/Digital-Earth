@@ -17,6 +17,7 @@ class Scene extends Component {
           id={this.props.id}
           title={this.props.title}
           text={this.props.text}
+          length={this.props.length}
         />
       </div>
     );
