@@ -9,6 +9,8 @@ class App extends Component {
         <Earth className="Earth" />
         <div id="info">
           <h2 style={{ textAlign: "center" }}>水惑星の奇跡</h2>
+          <hr />
+          <br />
           <h4>
             地球は、宇宙の中でも珍しい、水に満ち溢れた星です。<br /><br />
             水分子(H2O)は宇宙にあまねく存在しますが、<br /><br />
