@@ -46,6 +46,19 @@ class App extends Component {
       <Router>
         <div>
           <Switch>
+            <Route
+              exact
+              path="/"
+              render={() =>
+                <Scene
+                  id="0"
+                  lon="30"
+                  lat="135"
+                  global={vapor}
+                  title="地球ミュージアムにようこそ"
+                  text="はじめるには次へをクリック"
+                />}
+            />
             {SceneRoutes}
           </Switch>
         </div>
