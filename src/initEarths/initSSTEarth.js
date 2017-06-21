@@ -51,6 +51,7 @@ function createEarthMaterial() {
   video.src = sst;
   video.load();
   video.play();
+  video.loop = true;
 
   videoImage = document.createElement("canvas");
   videoImage.width = 1024;
