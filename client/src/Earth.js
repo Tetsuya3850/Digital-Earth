@@ -4,13 +4,13 @@ import THREELib from "three-js";
 
 const THREE = THREELib(["OrbitControls"]);
 
-var earthCanvas;
-var renderer;
-var scene;
-var camera;
-var cameraControl;
+let earthCanvas;
+let renderer;
+let scene;
+let camera;
+let cameraControl;
 
-var video, videoImage, videoImageContext, videoTexture;
+let video, videoImage, videoImageContext, videoTexture;
 
 class Earth extends Component {
   componentDidMount() {
@@ -32,12 +32,12 @@ class Earth extends Component {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.shadowMap.Enabled = true;
 
-    var sphereGeometry = new THREE.SphereGeometry(15, 60, 60);
-    var sphereMaterial = this.createEarthMaterial();
-    var earthMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    const sphereGeometry = new THREE.SphereGeometry(15, 60, 60);
+    let sphereMaterial = this.createEarthMaterial();
+    let earthMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
     earthMesh.name = "earth";
     scene.add(earthMesh);
-    var point = lonLatToVector3(this.props.lon, this.props.lat);
+    let point = lonLatToVector3(this.props.lon, this.props.lat);
     earthMesh.rotation.set(point.x, point.y, 0);
 
     camera.position.z = 45;
@@ -72,7 +72,7 @@ class Earth extends Component {
     videoTexture.minFilter = THREE.LinearFilter;
     videoTexture.magFilter = THREE.LinearFilter;
 
-    var earthMaterial = new THREE.MeshBasicMaterial({
+    let earthMaterial = new THREE.MeshBasicMaterial({
       map: videoTexture
     });
 
@@ -86,7 +86,7 @@ class Earth extends Component {
 
 function lonLatToVector3(lng, lat, out) {
   out = out || new THREE.Vector3();
-  var adjust = 90 - lat;
+  const adjust = 90 - lat;
   out.set(lng / 90 * Math.PI / 2, adjust / 90 * Math.PI / 2, 0);
   return out;
 }
