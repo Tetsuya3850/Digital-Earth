@@ -5,6 +5,7 @@ import Add from "./Add";
 import client from "./client";
 const vapor = require("./Visuals/earthvapor.mp4");
 const sst = require("./Visuals/sst2016.mp4");
+const gw = require("./Visuals/gw.mp4");
 
 class App extends Component {
   constructor(props) {
@@ -37,6 +38,7 @@ class App extends Component {
             lon={scene.lon}
             lat={scene.lat}
             global={eval(scene.global)}
+            loop={scene.loop}
             title={scene.title}
             text={scene.text}
             length={this.state.scenario.length}

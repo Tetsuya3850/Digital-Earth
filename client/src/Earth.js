@@ -58,7 +58,7 @@ class Earth extends Component {
     video.src = this.props.global;
     video.load();
     video.play();
-    video.loop = true;
+    video.loop = this.props.loop;
 
     videoImage = document.createElement("canvas");
     videoImage.width = 1024;
