@@ -61,8 +61,8 @@ class Earth extends Component {
     video.loop = this.props.loop;
 
     videoImage = document.createElement("canvas");
-    videoImage.width = 1024;
-    videoImage.height = 512;
+    videoImage.width = this.props.width;
+    videoImage.height = this.props.height;
 
     videoImageContext = videoImage.getContext("2d");
     videoImageContext.fillStyle = "#000000";

@@ -6,6 +6,7 @@ import client from "./client";
 const vapor = require("./Visuals/earthvapor.mp4");
 const sst = require("./Visuals/sst2016.mp4");
 const gw = require("./Visuals/gw.mp4");
+const cd = require("./Visuals/cd.mp4");
 
 class App extends Component {
   constructor(props) {
@@ -38,6 +39,8 @@ class App extends Component {
             lon={scene.lon}
             lat={scene.lat}
             global={eval(scene.global)}
+            width={scene.width}
+            height={scene.height}
             loop={scene.loop}
             title={scene.title}
             text={scene.text}
@@ -59,6 +62,8 @@ class App extends Component {
                   lon="30"
                   lat="135"
                   global={vapor}
+                  width="1024"
+                  height="512"
                   title="地球ミュージアムにようこそ"
                   text="はじめるには次へをクリック"
                   length={this.state.scenario.length}
