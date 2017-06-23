@@ -44,6 +44,8 @@ class Earth extends Component {
     camera.lookAt(scene.position);
 
     cameraControl = new THREE.OrbitControls(camera);
+    cameraControl.enableZoom = false;
+    cameraControl.enablePan = false;
 
     earthCanvas = document.getElementById("earthCanvas");
     earthCanvas.appendChild(renderer.domElement);
@@ -61,8 +63,8 @@ class Earth extends Component {
     video.loop = this.props.loop;
 
     videoImage = document.createElement("canvas");
-    videoImage.width = this.props.width;
-    videoImage.height = this.props.height;
+    videoImage.width = 1024;
+    videoImage.height = 512;
 
     videoImageContext = videoImage.getContext("2d");
     videoImageContext.fillStyle = "#000000";
