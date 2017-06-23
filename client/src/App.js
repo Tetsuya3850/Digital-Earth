@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./Home";
 import Scene from "./Scene";
 import Add from "./Add";
 import client from "./client";
@@ -51,20 +52,7 @@ class App extends Component {
       <Router>
         <div>
           <Switch>
-            <Route
-              exact
-              path="/"
-              render={() =>
-                <Scene
-                  id="0"
-                  lon="30"
-                  lat="135"
-                  global={vapor}
-                  title="地球ミュージアムにようこそ"
-                  text="はじめるには次へをクリック"
-                  length={this.state.scenario.length}
-                />}
-            />
+            <Route exact path="/" render={() => <Home global={vapor} />} />
             {SceneRoutes}
             <Route
               path="/add"
