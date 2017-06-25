@@ -7,13 +7,6 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Earth
-          className="Earth"
-          lon="30"
-          lat="135"
-          global={this.props.global}
-          loop="true"
-        />
         <div id="home">
           地球ミュージアム
         </div>
