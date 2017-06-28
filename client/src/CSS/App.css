@@ -9,15 +9,37 @@
   word-wrap: break-word;
 }
 
-#home {
+#home__title {
   position: absolute;
-  top: 250px;
-  left: 60%;
-  width: 35%;
+  width: 100%;
+  top: 25%;
+  text-align: center;
   z-index: 100;
-  display: block;
   color: white;
-  font-size: 200%;
+  font-size: 300%;
+  font-family: "Times New Roman";
+}
+
+#home__description {
+  position: absolute;
+  width: 100%;
+  top: 35%;
+  text-align: center;
+  z-index: 100;
+  color: white;
+  font-size: 120%;
+  font-family: "Times New Roman";
+}
+
+#home__explore {
+  position: absolute;
+  width: 100%;
+  top: 80%;
+  text-align: center;
+  z-index: 100;
+  color: white;
+  font-size: 120%;
+  font-family: "Times New Roman";
 }
 
 canvas {
