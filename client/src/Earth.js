@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./CSS/App.css";
 import THREELib from "three-js";
+import loading from "./Visuals/loading.gif";
 
 const THREE = THREELib(["OrbitControls"]);
 
@@ -13,6 +14,14 @@ let cameraControl;
 let video, videoImage, videoImageContext, videoTexture;
 
 class Earth extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      loading: true
+    };
+  }
+
   componentDidMount() {
     this.init();
   }
@@ -37,7 +46,7 @@ class Earth extends Component {
     let earthMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
     earthMesh.name = "earth";
     scene.add(earthMesh);
-    let point = lonLatToVector3(this.props.lon, this.props.lat);
+    let point = this.lonLatToVector3(this.props.lon, this.props.lat);
     earthMesh.rotation.set(point.x, point.y, 0);
 
     camera.position.z = 45;
@@ -50,9 +59,9 @@ class Earth extends Component {
     earthCanvas = document.getElementById("earthCanvas");
     earthCanvas.appendChild(renderer.domElement);
 
-    render();
+    this.threeRender();
 
-    window.addEventListener("resize", handleResize, false);
+    window.addEventListener("resize", this.handleResize, false);
   }
 
   createEarthMaterial() {
@@ -61,6 +70,7 @@ class Earth extends Component {
     video.load();
     video.play();
     video.loop = this.props.loop;
+    video.poster = loading;
 
     videoImage = document.createElement("canvas");
     videoImage.width = 1024;
@@ -81,32 +91,42 @@ class Earth extends Component {
     return earthMaterial;
   }
 
+  lonLatToVector3(lng, lat, out) {
+    out = out || new THREE.Vector3();
+    const adjust = 90 - lat;
+    out.set(lng / 90 * Math.PI / 2, adjust / 90 * Math.PI / 2, 0);
+    return out;
+  }
+
+  threeRender = () => {
+    if (video.readyState === video.HAVE_ENOUGH_DATA) {
+      videoImageContext.drawImage(video, 0, 0);
+      if (videoTexture) videoTexture.needsUpdate = true;
+      this.state.loading = false;
+    }
+    cameraControl.update();
+    renderer.render(scene, camera);
+    requestAnimationFrame(this.threeRender);
+  };
+
+  handleResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  }
+
   render() {
-    return <div id="earthCanvas" />;
+    let loading = null;
+    if (this.state.loading === true) {
+      loading = loading;
+    }
+    return (
+      <div>
+        {loading}
+        <div id="earthCanvas" />;
+      </div>
+    );
   }
-}
-
-function lonLatToVector3(lng, lat, out) {
-  out = out || new THREE.Vector3();
-  const adjust = 90 - lat;
-  out.set(lng / 90 * Math.PI / 2, adjust / 90 * Math.PI / 2, 0);
-  return out;
-}
-
-function render() {
-  if (video.readyState === video.HAVE_ENOUGH_DATA) {
-    videoImageContext.drawImage(video, 0, 0);
-    if (videoTexture) videoTexture.needsUpdate = true;
-  }
-  cameraControl.update();
-  renderer.render(scene, camera);
-  requestAnimationFrame(render);
-}
-
-function handleResize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
 export default Earth;
