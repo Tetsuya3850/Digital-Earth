@@ -34,6 +34,7 @@ app.post("/api/scenario", (req, res) => {
       lon: req.body.lon,
       lat: req.body.lat,
       global: req.body.global,
+      loop: req.body.loop,
       title: req.body.title,
       text: req.body.text
     };

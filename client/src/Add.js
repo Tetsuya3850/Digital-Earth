@@ -10,10 +10,12 @@ class Add extends React.Component {
 
     this.state = {
       globalOptions: ["vapor", "sst"],
+      loopOptions: ["true", "false"],
       fields: {
         lon: "",
         lat: "",
         global: "",
+        loop: "",
         title: "",
         text: ""
       },
@@ -37,6 +39,7 @@ class Add extends React.Component {
     if (!fields.lon) return true;
     if (!fields.lat) return true;
     if (!fields.global) return true;
+    if (!fields.loop) return true;
     if (!fields.title) return true;
     if (!fields.text) return true;
     if (errMessages.length) return true;
@@ -51,6 +54,7 @@ class Add extends React.Component {
     fields.lon = "";
     fields.lat = "";
     fields.global = "";
+    fields.loop = "";
     fields.title = "";
     fields.text = "";
 
@@ -66,6 +70,7 @@ class Add extends React.Component {
       lon: fields.lon,
       lat: fields.lat,
       global: fields.global,
+      loop: fields.loop,
       title: fields.title,
       text: fields.text
     };
@@ -125,6 +130,19 @@ class Add extends React.Component {
                 options={this.state.globalOptions}
                 value={this.state.fields.global}
                 validate={val => (val ? false : " Global Selection Required")}
+              />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-md-12">
+              <Select
+                name={"loop"}
+                placeholder={"Loop or not?"}
+                onChange={this.onInputChange}
+                options={this.state.loopOptions}
+                value={this.state.fields.loop}
+                validate={val => (val ? false : " Loop Selection Required")}
               />
             </div>
           </div>
