@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./CSS/App.css";
 import THREELib from "three-js";
-import loading from "./Visuals/loading.gif";
+import loadingGif from "./Visuals/loading.gif";
 
 const THREE = THREELib(["OrbitControls"]);
 
@@ -70,7 +70,6 @@ class Earth extends Component {
     video.load();
     video.play();
     video.loop = this.props.loop;
-    video.poster = loading;
 
     videoImage = document.createElement("canvas");
     videoImage.width = 1024;
@@ -102,7 +101,7 @@ class Earth extends Component {
     if (video.readyState === video.HAVE_ENOUGH_DATA) {
       videoImageContext.drawImage(video, 0, 0);
       if (videoTexture) videoTexture.needsUpdate = true;
-      this.state.loading = false;
+      this.setState({ loading: false });
     }
     cameraControl.update();
     renderer.render(scene, camera);
@@ -116,13 +115,15 @@ class Earth extends Component {
   }
 
   render() {
-    let loading = null;
-    if (this.state.loading === true) {
-      loading = loading;
+    let loadingSign = (
+      <img src={loadingGif} style={{ marginTop: 200, marginLeft: 200 }} />
+    );
+    if (this.state.loading === false) {
+      loadingSign = null;
     }
     return (
       <div>
-        {loading}
+        {loadingSign}
         <div id="earthCanvas" />;
       </div>
     );

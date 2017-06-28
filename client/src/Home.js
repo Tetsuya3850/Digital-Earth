@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Earth from "./Earth";
-import Description from "./Description";
 import "./CSS/App.css";
 import top from "./Visuals/top.mp4";
 
