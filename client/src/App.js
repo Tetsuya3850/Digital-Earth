@@ -7,7 +7,6 @@ import client from "./client";
 const vapor = require("./Visuals/earthvapor.mp4");
 const sst = require("./Visuals/sst.mp4");
 const gw = require("./Visuals/gw.mp4");
-const cd = require("./Visuals/cd.mp4");
 
 class App extends Component {
   constructor(props) {
