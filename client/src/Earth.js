@@ -101,7 +101,7 @@ class Earth extends Component {
     if (video.readyState === video.HAVE_ENOUGH_DATA) {
       videoImageContext.drawImage(video, 0, 0);
       if (videoTexture) videoTexture.needsUpdate = true;
-      this.setState({ loading: false });
+      if (this.refs.myRef) this.setState({ loading: false });
     }
     cameraControl.update();
     renderer.render(scene, camera);
@@ -123,7 +123,9 @@ class Earth extends Component {
     }
     return (
       <div>
-        {loadingSign}
+        <div ref="myRef">
+          {loadingSign}
+        </div>
         <div id="earthCanvas" />;
       </div>
     );
