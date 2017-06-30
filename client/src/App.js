@@ -4,7 +4,7 @@ import Home from "./Home";
 import Scene from "./Scene";
 import Add from "./Add";
 import client from "./client";
-const vapor = require("./Visuals/earthvapor.mp4");
+const vapor = require("./Visuals/vapor.mp4");
 const sst = require("./Visuals/sst.mp4");
 const gw = require("./Visuals/gw.mp4");
 
@@ -51,7 +51,7 @@ class App extends Component {
       <Router>
         <div>
           <Switch>
-            <Route exact path="/" render={() => <Home global={vapor} />} />
+            <Route exact path="/" component={Home} />
             {SceneRoutes}
             <Route
               path="/add"
