@@ -106,6 +106,8 @@ class Earth extends Component {
       videoSrc = require("./Visuals/gw.mp4");
     } else if (this.props.global === "continent") {
       videoSrc = require("./Visuals/continent.mp4");
+    } else if (this.props.global === "city") {
+      videoSrc = require("./Visuals/city.mp4");
     }
     return videoSrc;
   }

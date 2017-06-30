@@ -66,7 +66,7 @@ class Add extends React.Component {
     const { fields } = this.state;
 
     let width, height;
-    if (fields.global === "continent") {
+    if (fields.global === "continent" || fields.global === "city") {
       width = 2048;
       height = 1024;
     } else {
