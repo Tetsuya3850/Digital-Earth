@@ -11,7 +11,7 @@ let scene;
 let camera;
 let cameraControl;
 
-let video, videoImage, videoImageContext, videoTexture;
+let video, videoSrc, videoImage, videoImageContext, videoTexture;
 
 class Earth extends Component {
   constructor(props) {
@@ -66,7 +66,7 @@ class Earth extends Component {
 
   createEarthMaterial() {
     video = document.createElement("video");
-    video.src = this.props.global;
+    video.src = this.determineAsset();
     video.load();
     video.play();
     video.loop = this.props.loop;
@@ -97,6 +97,17 @@ class Earth extends Component {
     return out;
   }
 
+  determineAsset() {
+    if (this.props.global === "vapor") {
+      videoSrc = require("./Visuals/vapor.mp4");
+    } else if (this.props.global === "sst") {
+      videoSrc = require("./Visuals/sst.mp4");
+    } else if (this.props.global === "gw") {
+      videoSrc = require("./Visuals/gw.mp4");
+    }
+    return videoSrc;
+  }
+
   threeRender = () => {
     if (video.readyState === video.HAVE_ENOUGH_DATA) {
       videoImageContext.drawImage(video, 0, 0);
@@ -116,7 +127,11 @@ class Earth extends Component {
 
   render() {
     let loadingSign = (
-      <img src={loadingGif} style={{ marginTop: 200, marginLeft: 200 }} />
+      <img
+        src={loadingGif}
+        style={{ marginTop: 200, marginLeft: 200 }}
+        alt="loading"
+      />
     );
     if (this.state.loading === false) {
       loadingSign = null;

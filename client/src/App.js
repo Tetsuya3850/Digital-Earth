@@ -4,9 +4,6 @@ import Home from "./Home";
 import Scene from "./Scene";
 import Add from "./Add";
 import client from "./client";
-const vapor = require("./Visuals/vapor.mp4");
-const sst = require("./Visuals/sst.mp4");
-const gw = require("./Visuals/gw.mp4");
 
 class App extends Component {
   constructor(props) {
@@ -38,7 +35,7 @@ class App extends Component {
             id={scene.id}
             lon={scene.lon}
             lat={scene.lat}
-            global={eval(scene.global)}
+            global={scene.global}
             loop={scene.loop}
             title={scene.title}
             text={scene.text}
