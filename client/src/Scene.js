@@ -13,6 +13,8 @@ class Scene extends Component {
           lat={this.props.lat}
           global={this.props.global}
           loop={this.props.loop}
+          width={this.props.width}
+          height={this.props.height}
         />
         <Description
           id={this.props.id}

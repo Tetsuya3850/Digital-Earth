@@ -37,6 +37,8 @@ class App extends Component {
             lat={scene.lat}
             global={scene.global}
             loop={scene.loop}
+            width={scene.width}
+            height={scene.height}
             title={scene.title}
             text={scene.text}
             length={this.state.scenario.length}
