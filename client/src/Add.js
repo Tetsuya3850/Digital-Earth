@@ -9,7 +9,7 @@ class Add extends React.Component {
     super(props);
 
     this.state = {
-      globalOptions: ["vapor", "sst"],
+      globalOptions: ["vapor", "sst", "continent"],
       loopOptions: ["true", "false"],
       fields: {
         lon: "",
@@ -65,16 +65,28 @@ class Add extends React.Component {
     e.preventDefault();
     const { fields } = this.state;
 
+    let width, height;
+    if (fields.global === "continent") {
+      width = 2048;
+      height = 1024;
+    } else {
+      width = 1024;
+      height = 512;
+    }
+
     const formPayload = {
       id: Number(this.props.num) + 1,
       lon: fields.lon,
       lat: fields.lat,
       global: fields.global,
       loop: fields.loop,
+      width: width,
+      height: height,
       title: fields.title,
       text: fields.text
     };
 
+    console.log(formPayload);
     client.postScene(formPayload);
     this.handleClearForm(e);
   };
