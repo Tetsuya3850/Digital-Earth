@@ -26,7 +26,7 @@
   font-weight: 200;
 }
 
-html {
+html, body {
   background-color: black;
   font-family: -apple-system,
     BlinkMacSystemFont,
@@ -38,6 +38,10 @@ html {
     Meiryo,
     "M+ 1p",
     sans-serif;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 /* IE10以上 */
