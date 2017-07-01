@@ -14,18 +14,23 @@ class Choose extends Component {
       <div className="grid">
         <div>
           <img src={ocean} />
+          <p>Ocean</p>
         </div>
         <div>
           <img src={history} />
+          <p>Big <br /> History</p>
         </div>
         <div>
           <img src={city} />
+          <p>City</p>
         </div>
         <div>
           <img src={co2} />
+          <p>Global <br /> Warming</p>
         </div>
         <div>
           <img src={forest} />
+          <p>Forest</p>
         </div>
       </div>
     );
