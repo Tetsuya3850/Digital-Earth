@@ -14,9 +14,12 @@ class Choose extends Component {
     return (
       <div className="grid">
         <div className="box1">
-          <img src={banner} />
-          <h1 className="banner">Choose a Story</h1>
+          <Link to={"/"}>
+            <img src={banner} />
+            <h1 className="banner">Choose a Story</h1>
+          </Link>
         </div>
+
         <div>
           <img src={ocean} />
           <p>Ocean</p>
