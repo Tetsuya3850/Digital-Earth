@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Scene from "./Scene";
 import "./CSS/App.css";
+import banner from "./Visuals/banner.png";
 import ocean from "./Visuals/ocean.jpg";
 import history from "./Visuals/history.jpeg";
 import city from "./Visuals/city.jpg";
@@ -12,6 +13,10 @@ class Choose extends Component {
   render() {
     return (
       <div className="grid">
+        <div className="box1">
+          <img src={banner} />
+          <h1 className="banner">Choose a Story</h1>
+        </div>
         <div>
           <img src={ocean} />
           <p>Ocean</p>

@@ -15,7 +15,7 @@ class Home extends Component {
           <div id="home__description">
             Revisit Our Planet from a Whole New Perspective
           </div>
-          <Link to="/1">
+          <Link to="/choose">
             <div id="home__explore">
               Explore
               <br />
