@@ -90,13 +90,6 @@ class Earth extends Component {
     return earthMaterial;
   }
 
-  lonLatToVector3(lng, lat, out) {
-    out = out || new THREE.Vector3();
-    const adjust = 90 - lat;
-    out.set(lng / 90 * Math.PI / 2, adjust / 90 * Math.PI / 2, 0);
-    return out;
-  }
-
   determineAsset() {
     if (this.props.global === "vapor") {
       videoSrc = require("./Visuals/vapor.mp4");
@@ -110,6 +103,13 @@ class Earth extends Component {
       videoSrc = require("./Visuals/city.mp4");
     }
     return videoSrc;
+  }
+
+  lonLatToVector3(lng, lat, out) {
+    out = out || new THREE.Vector3();
+    const adjust = 90 - lat;
+    out.set(lng / 90 * Math.PI / 2, adjust / 90 * Math.PI / 2, 0);
+    return out;
   }
 
   threeRender = () => {

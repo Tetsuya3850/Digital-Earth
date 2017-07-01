@@ -86,7 +86,6 @@ class Add extends React.Component {
       text: fields.text
     };
 
-    console.log(formPayload);
     client.postScene(formPayload);
     this.handleClearForm(e);
   };
