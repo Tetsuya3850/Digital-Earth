@@ -47,6 +47,13 @@
   grid-template-columns: repeat(5, 1fr);
 }
 
+img, img.scale-with-grid {
+  outline: 0;
+  max-width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
 canvas {
   position: relative;
   left: -20%;
