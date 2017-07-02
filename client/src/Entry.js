@@ -8,7 +8,7 @@ const city = require("./Visuals/city.jpg");
 const co2 = require("./Visuals/co2.jpg");
 const forest = require("./Visuals/forest.jpeg");
 
-class Choose extends Component {
+class Entry extends Component {
   render() {
     const entries = this.props.entries.map(entry =>
       <div key={entry.id}>
@@ -33,4 +33,4 @@ class Choose extends Component {
   }
 }
 
-export default Choose;
+export default Entry;

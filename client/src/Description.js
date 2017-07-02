@@ -13,7 +13,7 @@ class Description extends Component {
         </Link>
       );
     } else {
-      nextLink = <Link to={"/choose"}>戻る</Link>;
+      nextLink = <Link to={"/entry"}>戻る</Link>;
     }
 
     return (
