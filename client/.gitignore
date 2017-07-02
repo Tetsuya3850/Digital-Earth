@@ -17,6 +17,7 @@
 .env.production.local
 
 # visuals
+/src/Visuals/earth.mp4
 /src/Visuals/sst.mp4
 /src/Visuals/vapor.mp4
 /src/Visuals/gw.mp4
