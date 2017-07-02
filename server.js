@@ -5,7 +5,8 @@ const path = require("path");
 
 const app = express();
 
-const DATA_FILE = path.join(__dirname, "data.json");
+const SCENARIO_FILE = path.join(__dirname, "scenario.json");
+const ENTRY_FILE = path.join(__dirname, "entry.json");
 
 app.set("port", process.env.API_PORT || 3001);
 
@@ -19,8 +20,15 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/api/entry", (req, res) => {
+  fs.readFile(ENTRY_FILE, (err, data) => {
+    res.setHeader("Cache-Control", "no-cache");
+    res.json(JSON.parse(data));
+  });
+});
+
 app.get("/api/scenario", (req, res) => {
-  fs.readFile(DATA_FILE, (err, data) => {
+  fs.readFile(SCENARIO_FILE, (err, data) => {
     res.setHeader("Cache-Control", "no-cache");
     res.json(JSON.parse(data));
   });

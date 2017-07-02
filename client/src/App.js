@@ -13,13 +13,21 @@ class App extends Component {
     super(props);
 
     this.state = {
+      entries: [],
       scenarios: {}
     };
   }
 
   componentDidMount() {
+    this.loadEntriesFromServer();
     this.loadScenariosFromServer();
   }
+
+  loadEntriesFromServer = () => {
+    client.getEntries(serverEntries =>
+      this.setState({ entries: serverEntries })
+    );
+  };
 
   loadScenariosFromServer = () => {
     client.getScenarios(serverScenarios =>
@@ -59,7 +67,10 @@ class App extends Component {
         <div>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/choose" component={Choose} />
+            <Route
+              path="/choose"
+              render={() => <Choose entries={this.state.entries} />}
+            />
             {sceneRoutes}
             <Route
               path="/add"

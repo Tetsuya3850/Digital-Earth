@@ -1,44 +1,33 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Scene from "./Scene";
 import "./CSS/App.css";
 import banner from "./Visuals/banner.png";
-import ocean from "./Visuals/ocean.jpg";
-import history from "./Visuals/history.jpeg";
-import city from "./Visuals/city.jpg";
-import co2 from "./Visuals/co2.jpg";
-import forest from "./Visuals/forest.jpeg";
+const ocean = require("./Visuals/ocean.jpg");
+const history = require("./Visuals/history.jpeg");
+const city = require("./Visuals/city.jpg");
+const co2 = require("./Visuals/co2.jpg");
+const forest = require("./Visuals/forest.jpeg");
 
 class Choose extends Component {
   render() {
+    const entries = this.props.entries.map(entry =>
+      <div key={entry.id}>
+        <Link to={"/" + entry.imageID + 1}>
+          <img src={eval(entry.imageID)} alt={entry.imageID} />
+          <p>{entry.title}</p>
+        </Link>
+      </div>
+    );
+
     return (
       <div className="grid">
         <div className="box1">
           <Link to={"/"}>
-            <img src={banner} />
+            <img src={banner} alt="banner" />
             <h1 className="banner">Choose a Story</h1>
           </Link>
         </div>
-        <div>
-          <img src={ocean} />
-          <p>Ocean</p>
-        </div>
-        <div>
-          <img src={history} />
-          <p>Big <br /> History</p>
-        </div>
-        <div>
-          <img src={city} />
-          <p>City</p>
-        </div>
-        <div>
-          <img src={co2} />
-          <p>Global <br /> Warming</p>
-        </div>
-        <div>
-          <img src={forest} />
-          <p>Forest</p>
-        </div>
+        {entries}
       </div>
     );
   }
