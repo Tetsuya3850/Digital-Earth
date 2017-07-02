@@ -1,4 +1,4 @@
-function getScenario(success) {
+function getScenarios(success) {
   return fetch("/api/scenario", {
     headers: {
       Accept: "application/json"
@@ -36,5 +36,5 @@ function parseJSON(response) {
   return response.json();
 }
 
-const client = { getScenario, postScene };
+const client = { getScenarios, postScene };
 export default client;

@@ -19,7 +19,6 @@ class Choose extends Component {
             <h1 className="banner">Choose a Story</h1>
           </Link>
         </div>
-
         <div>
           <img src={ocean} />
           <p>Ocean</p>

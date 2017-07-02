@@ -4,15 +4,16 @@ import { Link } from "react-router-dom";
 class Description extends Component {
   render() {
     let nextLink = null;
-    const nextId = Number(this.props.id) + 1;
+    const nextNumber = Number(this.props.id) + 1;
+    const nextID = this.props.scenario + nextNumber;
     if (this.props.id < this.props.length) {
       nextLink = (
-        <Link to={"/" + nextId} style={{ textAlign: "right" }}>
+        <Link to={"/" + nextID} style={{ textAlign: "right" }}>
           次へ
         </Link>
       );
     } else {
-      nextLink = <Link to={"/"}>ホームに戻る</Link>;
+      nextLink = <Link to={"/choose"}>戻る</Link>;
     }
 
     return (

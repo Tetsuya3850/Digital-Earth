@@ -18,6 +18,7 @@ class Scene extends Component {
         />
         <Description
           id={this.props.id}
+          scenario={this.props.scenario}
           title={this.props.title}
           text={this.props.text}
           length={this.props.length}
