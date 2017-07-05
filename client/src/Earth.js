@@ -91,18 +91,25 @@ class Earth extends Component {
   }
 
   determineAsset() {
-    if (this.props.global === "vapor") {
-      videoSrc = require("./Visuals/vapor.mp4");
-    } else if (this.props.global === "sst") {
-      videoSrc = require("./Visuals/sst.mp4");
-    } else if (this.props.global === "gw") {
-      videoSrc = require("./Visuals/gw.mp4");
-    } else if (this.props.global === "continent") {
-      videoSrc = require("./Visuals/continent.mp4");
-    } else if (this.props.global === "city") {
-      videoSrc = require("./Visuals/city.mp4");
-    } else if (this.props.global === "earth") {
-      videoSrc = require("./Visuals/earth.mp4");
+    switch (this.props.global) {
+      case "vapor":
+        videoSrc = require("./Visuals/vapor.mp4");
+        break;
+      case "sst":
+        videoSrc = require("./Visuals/sst.mp4");
+        break;
+      case "gw":
+        videoSrc = require("./Visuals/gw.mp4");
+        break;
+      case "continent":
+        videoSrc = require("./Visuals/continent.mp4");
+        break;
+      case "city":
+        videoSrc = require("./Visuals/city.mp4");
+        break;
+      case "earth":
+        videoSrc = require("./Visuals/earth.mp4");
+        break;
     }
     return videoSrc;
   }

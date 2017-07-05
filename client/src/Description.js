@@ -8,12 +8,12 @@ class Description extends Component {
     const nextID = this.props.scenario + nextNumber;
     if (this.props.id < this.props.length) {
       nextLink = (
-        <Link to={"/" + nextID} style={{ textAlign: "right" }}>
-          次へ
+        <Link to={"/" + nextID} style={{ color: "white" }}>
+          次へ→
         </Link>
       );
     } else {
-      nextLink = <Link to={"/entry"}>戻る</Link>;
+      nextLink = <Link to={"/entry"} style={{ color: "white" }}>戻る</Link>;
     }
 
     return (
@@ -24,7 +24,9 @@ class Description extends Component {
         <h4>
           {this.props.text}
         </h4>
-        {nextLink}
+        <div style={{ textAlign: "right" }}>
+          {nextLink}
+        </div>
       </div>
     );
   }
