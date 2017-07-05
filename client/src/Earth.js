@@ -113,6 +113,9 @@ class Earth extends Component {
       case "city":
         videoSrc = require("./Visuals/city.mp4");
         break;
+      case "forest":
+        videoSrc = require("./Visuals/forest.mp4");
+        break;
     }
     return videoSrc;
   }
