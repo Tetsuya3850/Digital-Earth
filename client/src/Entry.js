@@ -5,7 +5,7 @@ import banner from "./Visuals/banner.png";
 const ocean = require("./Visuals/ocean.jpg");
 const history = require("./Visuals/history.jpeg");
 const city = require("./Visuals/city.jpg");
-const co2 = require("./Visuals/co2.jpg");
+const coo = require("./Visuals/co2.jpg");
 const forest = require("./Visuals/forest.jpeg");
 
 class Entry extends Component {
