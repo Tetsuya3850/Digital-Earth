@@ -92,23 +92,26 @@ class Earth extends Component {
 
   determineAsset() {
     switch (this.props.global) {
+      case "earth":
+        videoSrc = require("./Visuals/earth.mp4");
+        break;
       case "vapor":
         videoSrc = require("./Visuals/vapor.mp4");
         break;
       case "sst":
         videoSrc = require("./Visuals/sst.mp4");
         break;
+      case "sstlonlat":
+        videoSrc = require("./Visuals/sstlonlat.mp4");
+        break;
+      case "continentafricaamerica":
+        videoSrc = require("./Visuals/continentafricaamerica.mp4");
+        break;
       case "gw":
         videoSrc = require("./Visuals/gw.mp4");
         break;
-      case "continent":
-        videoSrc = require("./Visuals/continent.mp4");
-        break;
       case "city":
         videoSrc = require("./Visuals/city.mp4");
-        break;
-      case "earth":
-        videoSrc = require("./Visuals/earth.mp4");
         break;
     }
     return videoSrc;

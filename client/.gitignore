@@ -19,11 +19,12 @@
 # visuals
 /src/Visuals/earth.mp4
 /src/Visuals/sst.mp4
+/src/Visuals/sstlonlat.mp4
 /src/Visuals/vapor.mp4
 /src/Visuals/gw.mp4
 /src/Visuals/cd.mp4
 /src/Visuals/top.mp4
-/src/Visuals/continent.mp4
+/src/Visuals/continentafricaamerica.mp4
 /src/Visuals/city.mp4
 
 npm-debug.log*
