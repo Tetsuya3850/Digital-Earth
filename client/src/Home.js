@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./CSS/App.css";
 import top from "./Visuals/top.mp4";
 
-function Home() {
+function Home(props) {
   return (
     <div>
       <div style={{ textAlign: "center", opacity: "0.7" }}>
