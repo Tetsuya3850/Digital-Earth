@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Earth from "./Earth";
 import Description from "./Description";
 import "./CSS/App.css";
