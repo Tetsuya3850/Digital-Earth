@@ -7,7 +7,6 @@ function Scene(props) {
   return (
     <div>
       <Earth
-        className="Earth"
         lon={props.lon}
         lat={props.lat}
         global={props.global}
