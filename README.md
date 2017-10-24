@@ -1,3 +1,2 @@
 A Digital Earth e-learning app prototype. <br />
-https://earthreact.herokuapp.com/ <br />
-(Loading Earth is still slow. I am working on it right now. Chorme seems to have best performance)
+(Sorry I cannot upload the demo, due to copyright issues)
